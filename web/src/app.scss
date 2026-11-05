@@ -1,0 +1,138 @@
+@use "bulma/sass" with (
+  $family-primary: ('Manrope Variable', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif),
+  $family-secondary: ('EB Garamond', Georgia, serif)
+);
+
+
+:root {
+  /* Sahara - Colores Fundamentales */
+  --sahara-primary: #c2652a;
+  --sahara-primary-container: #e08850;
+  --sahara-primary-light: #fbe8d8;
+  --sahara-bg: #faf5ee;
+  --sahara-text: #3a302a;
+  --sahara-text-muted: #78706a;
+  --sahara-tertiary: #8c3c3c;
+  --sahara-tertiary-light: #fce0e0;
+
+  /* Superficies y contenedores cálidos */
+  --sahara-surface-lowest: #ffffff;
+  --sahara-surface-low: #f6f0e8;
+  --sahara-surface: #faf5ee;
+  --sahara-surface-container: #f2ece4;
+  --sahara-surface-high: #ece6dc;
+  --sahara-surface-highest: #e6e0d6;
+
+  /* Bordes y elevaciones */
+  --sahara-outline: #9a9088;
+  --sahara-outline-variant: rgba(216, 208, 200, 0.6);
+  --sahara-shadow-soft: 0 2px 16px rgba(58, 48, 42, 0.04);
+  --sahara-shadow-card: 0 4px 20px rgba(58, 48, 42, 0.06);
+  --sahara-radius: 8px;
+
+  /* Sobrescribir variables de Bulma */
+  --bulma-primary: #c2652a;
+  --bulma-primary-h: 24deg;
+  --bulma-primary-s: 65%;
+  --bulma-primary-l: 46%;
+  --bulma-body-background-color: #faf5ee;
+  --bulma-body-color: #3a302a;
+  --bulma-background: #faf5ee;
+  --bulma-scheme-main: #faf5ee;
+  --bulma-scheme-main-bis: #f6f0e8;
+  --bulma-scheme-main-ter: #f2ece4;
+  --bulma-card-background-color: #ffffff;
+  --bulma-card-radius: 8px;
+  --bulma-radius: 8px;
+  --bulma-radius-rounded: 9999px;
+  --bulma-border: rgba(216, 208, 200, 0.6);
+}
+
+html, body {
+  background-color: var(--sahara-bg);
+  color: var(--sahara-text);
+  font-family: 'Manrope Variable', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+}
+
+/* Tipografía editorial para titulares */
+h1, h2, h3, .headline-serif {
+  font-family: 'EB Garamond', Georgia, serif;
+  font-weight: 500;
+  letter-spacing: -0.02em;
+  color: var(--sahara-text);
+}
+
+/* Estilos de botones Sahara */
+.button.is-sahara-primary {
+  background-color: var(--sahara-primary);
+  color: #ffffff;
+  border: none;
+  border-radius: var(--sahara-radius);
+  font-weight: 600;
+  transition: all 0.2s ease;
+
+  &:hover {
+    background-color: #aa541e;
+    color: #ffffff;
+  }
+}
+
+.button.is-sahara-outlined {
+  background-color: transparent;
+  color: var(--sahara-primary);
+  border: 1px solid var(--sahara-outline-variant);
+  border-radius: var(--sahara-radius);
+  font-weight: 600;
+  transition: all 0.2s ease;
+
+  &:hover {
+    background-color: var(--sahara-primary-light);
+    border-color: var(--sahara-primary);
+  }
+}
+
+/* Tarjetas Sahara con acolchado generoso y bordes cálidos */
+.card-sahara {
+  background: var(--sahara-surface-lowest);
+  border: 1px solid var(--sahara-outline-variant);
+  border-radius: var(--sahara-radius);
+  padding: 28px 32px;
+  box-shadow: var(--sahara-shadow-soft);
+}
+
+/* Badges de severidad vial */
+.badge-sev {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.25rem 0.65rem;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  border-radius: 9999px;
+
+  &.is-critica {
+    background-color: var(--sahara-tertiary-light);
+    color: var(--sahara-tertiary);
+    border: 1px solid rgba(140, 60, 60, 0.25);
+  }
+  &.is-alta {
+    background-color: var(--sahara-primary-light);
+    color: var(--sahara-primary);
+    border: 1px solid rgba(194, 101, 42, 0.25);
+  }
+  &.is-media {
+    background-color: #fef3e2;
+    color: #b26b15;
+    border: 1px solid rgba(178, 107, 21, 0.25);
+  }
+  &.is-baja {
+    background-color: var(--sahara-surface-container);
+    color: var(--sahara-text-muted);
+    border: 1px solid var(--sahara-outline-variant);
+  }
+}
